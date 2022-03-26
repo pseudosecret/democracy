@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Why hello, this is my earnest attempt at finally bringing to all of us the following:
 
-## Getting Started
+# Democracy
 
-First, run the development server:
+Essentially, a "macro-game" centering around Rock Paper Scissors.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## The Purpose
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This has been a brain-child of mine for a solid while, and I've explored several different avenues at realizing it. This time, I think I've finally got it.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+In a nutshell, this is a game played once per day where users submit a vote for Rock, Paper, or Scissors. Based on the voting, two are placed against each other, and the winning shape of that match yields the most points to those players, the least points to those who voted for the losing shape, and a bit-more-than-least amount of points for those who voted for the unused shape.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+From there, players spend the points to do... things. Oh, and data is collected, all of which gets used to make interesting statistics and draw weird, goofy correlations.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+I have various sorts of things that I think could be really fun with this. We'll see how it pans out.
 
-## Learn More
+## TO DO
 
-To learn more about Next.js, take a look at the following resources:
+There are a lot of things to do. Lots and lots. I'll be updating this readme as I make headway.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* Create the layout:
+    * Header
+    * Footer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* Create the pages:
+    * Home page
+    * FAQ
+    * About
+    * User
+        * (lots of subpages, TBD later)
+    * Statistics
+    * History
 
-## Deploy on Vercel
+* Create the database:
+    * Implement Mongoose
+    * ... etc?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Implement login
+    * And sessions!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* and um...
+    * ... whatever else...??
