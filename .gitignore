@@ -33,3 +33,6 @@ yarn-error.log*
 
 # original README.md file
 .README.md
+
+# other custom folders
+/mockups
