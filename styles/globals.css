@@ -18,13 +18,11 @@ a {
 }
 
 /**
- * From here: https://www.1001freefonts.com/avenue-x.font
+ * From here: https://www.1001freefonts.com/russian.font
  */
 @font-face {
-  font-family: "AvenueX";
-  src: url("/fonts/AvenueX-Regular.otf");
-  font-style: normal;
-  font-weight: 400;
+  font-family: "Russian";
+  src: url("../public/fonts/Russian.ttf");
   font-display: swap;
 }
 
@@ -43,7 +41,7 @@ a {
  * From here: https://www.1001freefonts.com/montserrat.font
  */
  @font-face {
-  font-family: "MontserratAlternates-Regular";
+  font-family: "MontserratAlternates";
   src: url("../public/fonts/MontserratAlternates-Regular.ttf");
   font-style: normal;
   font-display: swap;
@@ -53,7 +51,7 @@ a {
  * From here: https://www.1001freefonts.com/montserrat.font
  */
  @font-face {
-  font-family: "MontserratAlternates-Bold";
+  font-family: "MontserratAlternates";
   src: url("../public/fonts/MontserratAlternates-Bold.ttf");
   font-style: bold;
   font-display: swap;

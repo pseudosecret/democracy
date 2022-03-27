@@ -1,9 +1,12 @@
-import '../styles/Big-Title.module.css'
 import BigTitle from './big-title'
+import NavBar from './navbar'
 
 const TheHeader = () => {
     return (
-        <BigTitle className='title'/>
+        <div>
+            <BigTitle />
+            <NavBar />
+        </div>
     )
 }
 
