@@ -1,7 +1,11 @@
-.container {
-    margin: auto;
-    padding: 0;
+.centering {
     overflow: hidden;
-    width: 60%;
+    width: 50%;
+    margin: auto;
 }
 
+.bordering {
+    border-width: 1px;
+    border-color: red;
+    border-style: dashed;
+}

@@ -4,8 +4,8 @@ import styles from '../styles/NavBar.module.css'
 
 const NavBar = () => {
     return (
-        <div className={styles.container}>
-            <Breadcrumbs separator='|' aria-label='breadcrumb'>
+        <div>
+            <Breadcrumbs separator='|' aria-label='breadcrumb' display="flex" alignItems="center" justifyContent="center">
                 <Link href='/'>
                     Home
                 </Link>

@@ -11,6 +11,12 @@ class MyDocument extends Document {
                         as="font"
                         crossOrigin="anonymous"
                     />
+                    <link
+                        rel="preload"
+                        href="../public/fonts/ZnikomitNo25.otf"
+                        as="font"
+                        crossOrigin="anonymous"
+                    />
                 </Head>
                 <body>
                     <Main />

@@ -1,9 +1,9 @@
-import '../styles/The-Footer.module.css'
+import styles from '../styles/The-Footer.module.css'
 import Link from 'next/link'
 
 const TheFooter = () => {
     return (
-        <footer>
+        <footer className={styles.container}>
             <p>
                 &copy; Wilbur Industries, 2022
             </p>

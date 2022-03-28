@@ -4,7 +4,7 @@ body {
   background: linear-gradient(90deg, rgba(218,203,255,1) 0%, rgba(233,235,222,1) 4%, rgba(252,255,235,1) 96%, rgba(245,205,184,1) 100%);
   padding: 0;
   margin: 0;
-  font-family: Montserrat, Segoe UI, Roboto, Oxygen,
+  font-family: MontserratAlternatives, Montserrat, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -16,6 +16,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
 
 /**
  * From here: https://www.1001freefonts.com/russian.font

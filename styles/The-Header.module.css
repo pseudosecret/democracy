@@ -1,0 +1,17 @@
+.container {
+    text-align: center;
+}
+
+/**
+.title {
+    margin: 1em auto 2px;
+}
+*/
+
+.lineBlock {
+    margin: 0 auto 10px;
+    width: 50%;
+    height: 3px;
+    background: rgb(27,23,61);
+    background: linear-gradient(90deg, rgba(27,23,61,1) 0%, rgba(54,24,15,1) 100%);
+}
