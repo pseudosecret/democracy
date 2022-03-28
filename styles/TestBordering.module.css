@@ -1,0 +1,8 @@
+/**
+ * This exists solely for testing purposes...
+ */ 
+ .bordering {
+    border-width: 1px;
+    border-color: red;
+    border-style: dashed;
+  }
