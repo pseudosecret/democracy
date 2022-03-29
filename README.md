@@ -20,16 +20,27 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
 
 * Create the layout:
     * Header
+        * Set up the links
+        * Style the links
     * Footer
+        * Maybe add a line to separate the footer from the page
 
 * Create the pages:
     * Home page
+        * Add text that shows voting numbers
+        * Add voting selectors for rock, paper, scissors
+        * Add voting button
     * FAQ
+        * Write the FAQ
     * About
+        * Write the About page
     * User
         * (lots of subpages, TBD later)
-    * Statistics
-    * History
+    * Data
+        * History page
+            * (Lots of numerical records, TBD later)
+        * Statistics page
+            * (Lots of statistical information, TBD later)
 
 * Create the database:
     * Implement Mongoose
@@ -37,6 +48,7 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
 
 * Implement login
     * And sessions!
+    * This is probably the last phase
 
 * and um...
     * ... whatever else...??
