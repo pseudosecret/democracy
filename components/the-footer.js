@@ -5,11 +5,12 @@ const TheFooter = () => {
     return (
         <footer className={styles.container}>
             <p>
-                &copy; Wilbur Industries, 2022
+                <span className={styles.copyright}>&copy;</span>
+                <span className={styles.industries}>Wilbur Industries, 2022</span>
             </p>
             <p>
-                For more projects by us, check <Link href="https://pseudosecret.github.io/wilburindustries/"><a>here</a></Link>
-                .
+                <span className={styles.promo}>For more projects by us, check <Link href="https://pseudosecret.github.io/wilburindustries/"><a>here</a></Link>
+                .</span>
             </p>
         </footer>
     )

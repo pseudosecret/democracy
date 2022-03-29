@@ -9,3 +9,8 @@
     border-color: red;
     border-style: dashed;
 }
+
+.breadcrumbs {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}

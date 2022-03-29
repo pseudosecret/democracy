@@ -1,9 +1,10 @@
 .title {
     font-family: Russian, Impact;
     text-align: center;
-    font-size: 5em;
+    font-size: 92px;
     background: -webkit-linear-gradient(rgb(54, 24, 15), rgb(27, 23, 61));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 0 auto 0;
 }

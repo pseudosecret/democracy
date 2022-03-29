@@ -1,0 +1,13 @@
+.charts {
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.blah {
+    color: #ffb56b;
+}
