@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import TeamPointDisplay from '../components/team-points-display'
 import VotesChart from '../components/votes-chart'
+import VotesInfo from '../components/votes-info'
 
 export default function Home() {
   return (
@@ -25,6 +26,13 @@ export default function Home() {
             teamPoints={36}
             backgroundColor={"#7B68EE"}
             borderColor={"#4B0082"}
+          />
+        </div>
+        <div>
+          <VotesInfo
+            rockVotes={52}
+            paperVotes={11}
+            scissorsVotes={26}
           />
         </div>
       </main>

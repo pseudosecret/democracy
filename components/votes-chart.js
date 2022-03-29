@@ -59,7 +59,7 @@ ChartJS.register(
 class VotesChart extends React.Component {
     render() {
         return (
-            <div>
+            <div className={styles.wider}>
                 <Doughnut 
                     data={{
                         labels: ["Rock", "Paper", "Scissors"],
@@ -70,18 +70,18 @@ class VotesChart extends React.Component {
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(45, 192, 152, 0.2)',
                             ],
                             borderColor: [
                                 'rgba(255, 99, 132, 1)',
                                 'rgba(54, 162, 235, 1)',
-                                'rgba(75, 192, 192, 1)',
+                                'rgba(45, 192, 152, 1)',
                             ]
                         }],
                         borderWidth: 6,
                     }} 
-                    height={600}
-                    width={600}
+                    height={300}
+                    width={300}
                     options={{  maintainAspectRatio: true,
                                 responsive: true,
                                 offset: true,

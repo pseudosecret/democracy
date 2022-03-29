@@ -1,0 +1,21 @@
+.info {
+    margin: auto;
+    width: 40%;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'MontserratAlternates'
+}
+
+.rock {
+    color: rgb(163, 32, 60);
+}
+
+.paper {
+    margin-left: 40px;
+    margin-right: 40px;
+    color: rgb(0, 120, 201);
+}
+
+.scissors {
+    color: rgb(16, 109, 55);
+}

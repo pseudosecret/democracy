@@ -65,7 +65,7 @@ class TeamPointDisplay extends React.Component {
                         labels: [this.props.teamName],
                         datasets: [{
                             barPercentage: 1,
-                            label: "Points to Victory",
+                            label: "Points",
                             data: [this.props.teamPoints],
                             fill: true,
                             backgroundColor: this.props.backgroundColor,
@@ -83,7 +83,7 @@ class TeamPointDisplay extends React.Component {
                         }
                     }} 
                     height={400}
-                    width={100}
+                    width={80}
                     options={{  maintainAspectRatio: true,
                                 responsive: true,
                                 offset: true,
