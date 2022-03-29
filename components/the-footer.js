@@ -4,6 +4,7 @@ import Link from 'next/link'
 const TheFooter = () => {
     return (
         <footer className={styles.container}>
+            <div className={styles.lineBlock} />
             <p>
                 <span className={styles.copyright}>&copy;</span>
                 <span className={styles.industries}>Wilbur Industries, 2022</span>

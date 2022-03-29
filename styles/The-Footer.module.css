@@ -18,3 +18,11 @@
     font-style: italic;
     font-size: 1.2em;
 }
+
+.lineBlock {
+    margin: 50px auto 0;
+    width: 50%;
+    height: 3px;
+    background: rgb(27,23,61);
+    background: linear-gradient(90deg, rgba(27,23,61,1) 0%, rgba(54,24,15,1) 100%);
+}
