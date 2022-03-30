@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import TeamPointDisplay from '../components/team-points-display'
 import VotesChart from '../components/votes-chart'
 import VotesInfo from '../components/votes-info'
+import Voting from '../components/voting'
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
             paperVotes={11}
             scissorsVotes={26}
           />
+        </div>
+        <div>
+          <Voting />
         </div>
       </main>
     </div>
