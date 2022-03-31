@@ -87,6 +87,11 @@ class TeamPointDisplay extends React.Component {
                     options={{  maintainAspectRatio: true,
                                 responsive: true,
                                 offset: true,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    }
+                                },
                                 scales: {
                                     yAxes: {
                                             beginAtZero: true,
