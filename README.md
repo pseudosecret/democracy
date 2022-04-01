@@ -6,13 +6,13 @@ Essentially, a "macro-game" centering around Rock Paper Scissors.
 
 ## About the Project
 
-This has been a brain-child of mine for a solid while, and I've explored several different avenues at realizing it. This time, I think I've finally got it.
+Democracy has been a brain-child of mine for a solid while (since summer of 2015), and I've explored several different avenues at realizing it. This time, I think I've finally got it.
 
 In a nutshell, this is a game played once per day where users submit a vote for Rock, Paper, or Scissors. Based on the voting, two are placed against each other, and the winning shape of that match yields the most points to those players, the least points to those who voted for the losing shape, and a bit-more-than-least amount of points for those who voted for the unused shape.
 
-From there, players spend the points to do... things. Oh, and data is collected, all of which gets used to make interesting statistics and draw weird, goofy correlations.
+From there, players spend the points to bring their team to victory or prevent the other team from reaching victory. Oh, and data is collected, all of which gets used to make interesting statistics and draw weird, goofy correlations.
 
-I have various sorts of things that I think could be really fun with this. We'll see how it pans out.
+
 
 *note: this is pulled from the About page on the site.*
 
@@ -134,9 +134,13 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
         * ~~Add text that shows voting numbers~~
         * ~~Add voting selectors for rock, paper, scissors~~
         * ~~Add voting button~~
-        * (list other things that need to be done, TBD later)
+        * Voting interface:
+            * Make it so clicking on a shape gives blatantly obvious selection.
+            * Make it so clicking on a shape selects the correct radio button
+            * Make it so clicking vote 
     * ~~FAQ~~
         * ~~Write the FAQ~~
+        * Add Q&A about the code
     * About
         * Write the About page
     * User

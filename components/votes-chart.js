@@ -58,6 +58,8 @@ ChartJS.register(
 
 class VotesChart extends React.Component {
     render() {
+        const data = [this.props.rockVotes, this.props.paperVotes, this.props.scissorsVotes]
+
         return (
             <div className={styles.wider}>
                 <Doughnut 
@@ -65,7 +67,7 @@ class VotesChart extends React.Component {
                         labels: ["Rock", "Paper", "Scissors"],
                         datasets: [{
                             label: "# of Votes",
-                            data: [52, 11, 26],
+                            data: data,
                             fill: true,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',

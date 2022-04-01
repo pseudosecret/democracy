@@ -12,10 +12,27 @@
     height: 0;
 }
 
+.imageWrapper {
+    border-width: 7px;
+    border-color: rgb(255, 255, 255, 0);
+    border-style: solid;
+    border-radius: 100%;
+    transition-property: border-color;
+    transition-duration: 0.4s;
+}
+
+.imageWrapper:active {
+    border-color: rgba(255, 0, 0, 1);
+}
+
 /* IMAGE STYLES */
 .radioImg {
     cursor: pointer;
-    transition-property: filter;
+    border-width: 1px;
+    border-color: red;
+    border-style: solid;
+    border-radius: 0px;
+    transition-property: filter, border, border-width, border-color, border-style, border-radius;
     transition-duration: 0.3s;
 }
 
@@ -25,6 +42,8 @@
 
 .imgsDiv {
     margin-top: 20px;
+    display: inline-flex;
+
 }
 
 .label {

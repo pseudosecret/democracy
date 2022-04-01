@@ -10,50 +10,56 @@ const Voting = () => {
         <div className={styles.centering}>
             <form>
                 <div className={styles.imgsDiv}>
-                    <input  
-                        className={styles.radioOnly}
-                        type='radio'
-                        id='rock'
-                        name='ballotSelection'
-                    />
-                    <label className={styles.label}>
-                        <Image className={styles.radioImg}
-                            alt='rock icon'
-                            src={rock}
-                            width={100}
-                            height={100}
+                    <div className={styles.imageWrapper}>
+                        <input  
+                            className={styles.radioOnly}
+                            type='radio'
+                            id='rock'
+                            name='ballotSelection'
                         />
-                    </label>
-                    <input  
-                        className={styles.radioOnly}
-                        type='radio'
-                        id='paper'
-                        name='ballotSelection'
-                    />
-                    <label className={styles.label}>
-                        <Image
-                            className={styles.radioImg}
-                            alt='paper icon'
-                            src={paper}
-                            width={100}
-                            height={100}
+                        <label className={styles.label}>
+                            <Image className={styles.radioImg}
+                                alt='rock icon'
+                                src={rock}
+                                width={100}
+                                height={100}
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.imageWrapper}>
+                        <input  
+                            className={styles.radioOnly}
+                            type='radio'
+                            id='paper'
+                            name='ballotSelection'
                         />
-                    </label>
-                    <input  
-                        className={styles.radioOnly}
-                        type='radio'
-                        id='scissors'
-                        name='ballotSelection'
-                    />
-                    <label className={styles.label}>
-                        <Image 
-                            className={styles.radioImg}
-                            alt='scissors icon'
-                            src={scissors}
-                            width={100}
-                            height={100}
+                        <label className={styles.label}>
+                            <Image
+                                className={styles.radioImg}
+                                alt='paper icon'
+                                src={paper}
+                                width={100}
+                                height={100}
+                            />
+                        </label>
+                    </div>
+                    <div className={styles.imageWrapper}>
+                        <input  
+                            className={styles.radioOnly}
+                            type='radio'
+                            id='scissors'
+                            name='ballotSelection'
                         />
-                    </label>
+                        <label className={styles.label}>
+                            <Image 
+                                className={styles.radioImg}
+                                alt='scissors icon'
+                                src={scissors}
+                                width={100}
+                                height={100}
+                            />
+                        </label>
+                    </div>
                 </div>
                 <div className={styles.buttonDiv}>
                     <Button 

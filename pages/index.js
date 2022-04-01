@@ -21,7 +21,11 @@ export default function Home() {
             backgroundColor={"#FFB56B"}
             borderColor={"#CB410B"}
           />
-          <VotesChart />
+          <VotesChart 
+            rockVotes={52}
+            paperVotes={11}
+            scissorsVotes={26}
+          />
           <TeamPointDisplay 
             teamName={"Team 2"}
             teamPoints={36}
