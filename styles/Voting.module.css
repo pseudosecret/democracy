@@ -21,8 +21,13 @@
     transition-duration: 0.4s;
 }
 
-.imageWrapper:active {
+.imageWrapperSelected {
+    border-width: 7px;
     border-color: rgba(255, 0, 0, 1);
+    border-style: solid;
+    border-radius: 100%;
+    transition-property: border-color;
+    transition-duration: 0.4s;
 }
 
 /* IMAGE STYLES */

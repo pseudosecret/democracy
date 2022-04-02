@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from '../styles/Voting.module.css'
 import { Button } from '@mui/material'
 import Image from 'next/image'
@@ -6,16 +7,30 @@ import paper from '../public/img/paper.png'
 import scissors from '../public/img/scissors.png'
 
 const Voting = () => {
+    const [shape, setShape] = React.useState('')
+    const [style, setStyle] = React.useState('')
+
+    const handleChange = (event) => {
+        setShape(event.target.value)
+    }
+
+    const handleClick = (event) => {
+        setShape(event.target.id)
+        setStyle('.imageWrapper:active')
+    }
+
     return (
         <div className={styles.centering}>
             <form>
                 <div className={styles.imgsDiv}>
-                    <div className={styles.imageWrapper}>
+                    <div className={shape === 'rock' ? styles.imageWrapperSelected : styles.imageWrapper}>
                         <input  
                             className={styles.radioOnly}
                             type='radio'
-                            id='rock'
+                            value='rock'
+                            checked={shape === 'rock'}
                             name='ballotSelection'
+                            onChange={handleChange}
                         />
                         <label className={styles.label}>
                             <Image className={styles.radioImg}
@@ -23,15 +38,19 @@ const Voting = () => {
                                 src={rock}
                                 width={100}
                                 height={100}
+                                id='rock'
+                                onClick={handleClick}
                             />
                         </label>
                     </div>
-                    <div className={styles.imageWrapper}>
+                    <div className={shape === 'paper' ? styles.imageWrapperSelected : styles.imageWrapper}>
                         <input  
                             className={styles.radioOnly}
                             type='radio'
-                            id='paper'
+                            value='paper'
+                            checked={shape === 'paper'}
                             name='ballotSelection'
+                            onChange={handleChange}
                         />
                         <label className={styles.label}>
                             <Image
@@ -40,15 +59,19 @@ const Voting = () => {
                                 src={paper}
                                 width={100}
                                 height={100}
+                                id='paper'
+                                onClick={handleClick}
                             />
                         </label>
                     </div>
-                    <div className={styles.imageWrapper}>
+                    <div className={shape === 'scissors' ? styles.imageWrapperSelected : styles.imageWrapper}>
                         <input  
                             className={styles.radioOnly}
                             type='radio'
-                            id='scissors'
+                            value='scissors'
+                            checked={shape === 'scissors'}
                             name='ballotSelection'
+                            onChange={handleChange}
                         />
                         <label className={styles.label}>
                             <Image 
@@ -57,6 +80,8 @@ const Voting = () => {
                                 src={scissors}
                                 width={100}
                                 height={100}
+                                id='scissors'
+                                onClick={handleClick}
                             />
                         </label>
                     </div>
@@ -65,7 +90,7 @@ const Voting = () => {
                     <Button 
                         variant='contained'
                         onClick={() => {
-                            console.log('Voted!')
+                            console.log('Shape selected: ' + shape + '!')
                         }}
                     >
                         Vote!
@@ -73,7 +98,7 @@ const Voting = () => {
                 </div>
             </form>
         </div>
-    )
+    )   
 }
 
 export default Voting
