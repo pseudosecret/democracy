@@ -7,7 +7,6 @@ const getVotes = async (req, res) => {
       .collection('votes')
       .find()
       .toArray()
-    const stringedout = JSON.stringify(result)
     const rockVotes = Object.keys(result.filter(vote => vote.shape === 1)).length
     const paperVotes = Object.keys(result.filter(vote => vote.shape === 2)).length
     const scissorsVotes = Object.keys(result.filter(vote => vote.shape === 3)).length
