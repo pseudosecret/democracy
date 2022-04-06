@@ -5,8 +5,45 @@ import TeamPointDisplay from '../components/team-points-display'
 import VotesChart from '../components/votes-chart'
 import VotesInfo from '../components/votes-info'
 import Voting from '../components/voting'
+import useSWR from 'swr'
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
 const Index = () => {
+  let numRockVotes = 0
+  let numPaperVotes = 0
+  let numScissorsVotes = 0
+
+  let { data: rockVotes, error: rockError } = useSWR('/api/getVotes?shape=1', fetcher)
+  let { data: paperVotes, error: paperError } = useSWR('/api/getVotes?shape=2', fetcher)
+  let { data: scissorsVotes, error: scissorsError } = useSWR('/api/getVotes?shape=3', fetcher)
+  
+  if(rockError || paperError || scissorsError) {
+      return (
+          <div>
+              {rockError}
+              {paperError}
+              {scissorsError}
+          </div>
+      )
+  }
+
+  if(!rockVotes) {
+    rockVotes = 'unknown'
+  } else {
+    numRockVotes = Object.keys(rockVotes.result).length
+  }
+  if(!paperVotes) {
+    paperVotes = 'unknown'
+  } else {
+  numPaperVotes = Object.keys(paperVotes.result).length
+  }
+  if(!scissorsVotes) {
+    scissorsVotes = 'unknown'
+  } else {
+    numScissorsVotes = Object.keys(scissorsVotes.result).length
+  }
+
   return (
     <div>
       <Head>
@@ -23,9 +60,9 @@ const Index = () => {
             borderColor={"#CB410B"}
           />
           <VotesChart 
-            rockVotes={52}
-            paperVotes={11}
-            scissorsVotes={26}
+            rockVotes={numRockVotes}
+            paperVotes={numPaperVotes}
+            scissorsVotes={numScissorsVotes}
           />
           <TeamPointDisplay 
             teamName={"Team 2"}
@@ -35,7 +72,11 @@ const Index = () => {
           />
         </div>
         <div>
-          <VotesInfo />
+          <VotesInfo 
+            rockVotes = {numRockVotes}
+            paperVotes = {numPaperVotes}
+            scissorsVotes = {numScissorsVotes}
+          />
         </div>
         <div>
           <Voting />
