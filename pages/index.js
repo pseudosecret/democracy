@@ -10,38 +10,18 @@ import useSWR from 'swr'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 const Index = () => {
-  let numRockVotes = 0
-  let numPaperVotes = 0
-  let numScissorsVotes = 0
-
-  let { data: rockVotes, error: rockError } = useSWR('/api/getVotes?shape=1', fetcher)
-  let { data: paperVotes, error: paperError } = useSWR('/api/getVotes?shape=2', fetcher)
-  let { data: scissorsVotes, error: scissorsError } = useSWR('/api/getVotes?shape=3', fetcher)
+  let { data, error } = useSWR('/api/getVotes', fetcher)
   
-  if(rockError || paperError || scissorsError) {
+  if(error) {
       return (
           <div>
-              {rockError}
-              {paperError}
-              {scissorsError}
+              Error: {error}
           </div>
       )
   }
 
-  if(!rockVotes) {
-    rockVotes = 'unknown'
-  } else {
-    numRockVotes = Object.keys(rockVotes.result).length
-  }
-  if(!paperVotes) {
-    paperVotes = 'unknown'
-  } else {
-  numPaperVotes = Object.keys(paperVotes.result).length
-  }
-  if(!scissorsVotes) {
-    scissorsVotes = 'unknown'
-  } else {
-    numScissorsVotes = Object.keys(scissorsVotes.result).length
+  if(!data) {
+    return <div>Loading...</div>
   }
 
   return (
@@ -60,9 +40,9 @@ const Index = () => {
             borderColor={"#CB410B"}
           />
           <VotesChart 
-            rockVotes={numRockVotes}
-            paperVotes={numPaperVotes}
-            scissorsVotes={numScissorsVotes}
+            rockVotes={data.votes.rock}
+            paperVotes={data.votes.paper}
+            scissorsVotes={data.votes.scissors}
           />
           <TeamPointDisplay 
             teamName={"Team 2"}
@@ -73,9 +53,9 @@ const Index = () => {
         </div>
         <div>
           <VotesInfo 
-            rockVotes = {numRockVotes}
-            paperVotes = {numPaperVotes}
-            scissorsVotes = {numScissorsVotes}
+            rockVotes = {data.votes.rock}
+            paperVotes = {data.votes.paper}
+            scissorsVotes = {data.votes.scissors}
           />
         </div>
         <div>
@@ -85,8 +65,5 @@ const Index = () => {
     </div>
   )
 }
-
-
-
 
 export default Index
