@@ -8,7 +8,7 @@ import scissors from '../public/img/scissors.png'
 
 const Voting = () => {
     const [shape, setShape] = React.useState('')
-    const [style, setStyle] = React.useState('')
+    const [voted, setVoted] = React.useState(false)
 
     const handleChange = (event) => {
         setShape(event.target.value)
@@ -16,89 +16,112 @@ const Voting = () => {
 
     const handleClick = (event) => {
         setShape(event.target.id)
-        setStyle('.imageWrapper:active')
     }
 
-    return (
-        <div className={styles.centering}>
-            <form>
-                <div className={styles.imgsDiv}>
-                    <div className={shape === 'rock' ? styles.imageWrapperSelected : styles.imageWrapper}>
-                        <input  
-                            className={styles.radioOnly}
-                            type='radio'
-                            value='rock'
-                            checked={shape === 'rock'}
-                            name='ballotSelection'
-                            onChange={handleChange}
-                        />
-                        <label className={styles.label}>
-                            <Image className={styles.radioImg}
-                                alt='rock icon'
-                                src={rock}
-                                width={100}
-                                height={100}
-                                id='rock'
-                                onClick={handleClick}
+    const submitVote = async (event) => {
+        event.preventDefault()
+        const res = await fetch('/api/vote', {
+            body: JSON.stringify({
+                shape: shape
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            method: 'POST',
+        })
+        const result = await res.json();
+        console.log('result: ', JSON.stringify(result))
+        setVoted = true
+        alert('Did you vote for this?: ' + result.shape)
+    }
+
+    if(!voted) {
+        return (
+            <div className={styles.centering}>
+                <form onSubmit={submitVote}>
+                    <div className={styles.imgsDiv}>
+                        <div className={shape === 'rock' ? styles.imageWrapperRockSelected : styles.imageWrapper}>
+                            <input  
+                                className={styles.radioOnly}
+                                type='radio'
+                                value='rock'
+                                checked={shape === 'rock'}
+                                name='ballotSelection'
+                                onChange={handleChange}
                             />
-                        </label>
-                    </div>
-                    <div className={shape === 'paper' ? styles.imageWrapperSelected : styles.imageWrapper}>
-                        <input  
-                            className={styles.radioOnly}
-                            type='radio'
-                            value='paper'
-                            checked={shape === 'paper'}
-                            name='ballotSelection'
-                            onChange={handleChange}
-                        />
-                        <label className={styles.label}>
-                            <Image
-                                className={styles.radioImg}
-                                alt='paper icon'
-                                src={paper}
-                                width={100}
-                                height={100}
-                                id='paper'
-                                onClick={handleClick}
+                            <label className={styles.label}>
+                                <Image className={styles.radioImg}
+                                    alt='rock icon'
+                                    src={rock}
+                                    width={100}
+                                    height={100}
+                                    id='rock'
+                                    onClick={handleClick}
+                                />
+                            </label>
+                        </div>
+                        <div className={shape === 'paper' ? styles.imageWrapperPaperSelected : styles.imageWrapper}>
+                            <input  
+                                className={styles.radioOnly}
+                                type='radio'
+                                value='paper'
+                                checked={shape === 'paper'}
+                                name='ballotSelection'
+                                onChange={handleChange}
                             />
-                        </label>
-                    </div>
-                    <div className={shape === 'scissors' ? styles.imageWrapperSelected : styles.imageWrapper}>
-                        <input  
-                            className={styles.radioOnly}
-                            type='radio'
-                            value='scissors'
-                            checked={shape === 'scissors'}
-                            name='ballotSelection'
-                            onChange={handleChange}
-                        />
-                        <label className={styles.label}>
-                            <Image 
-                                className={styles.radioImg}
-                                alt='scissors icon'
-                                src={scissors}
-                                width={100}
-                                height={100}
-                                id='scissors'
-                                onClick={handleClick}
+                            <label className={styles.label}>
+                                <Image
+                                    className={styles.radioImg}
+                                    alt='paper icon'
+                                    src={paper}
+                                    width={100}
+                                    height={100}
+                                    id='paper'
+                                    onClick={handleClick}
+                                />
+                            </label>
+                        </div>
+                        <div className={shape === 'scissors' ? styles.imageWrapperScissorsSelected : styles.imageWrapper}>
+                            <input  
+                                className={styles.radioOnly}
+                                type='radio'
+                                value='scissors'
+                                checked={shape === 'scissors'}
+                                name='ballotSelection'
+                                onChange={handleChange}
                             />
-                        </label>
+                            <label className={styles.label}>
+                                <Image 
+                                    className={styles.radioImg}
+                                    alt='scissors icon'
+                                    src={scissors}
+                                    width={100}
+                                    height={100}
+                                    id='scissors'
+                                    onClick={handleClick}
+                                />
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.buttonDiv}>
-                    <Button 
-                        variant='contained'
-                        onClick={() => {
-                            console.log('Shape selected: ' + shape + '!')
-                        }}
-                    >
-                        Vote!
-                    </Button>
-                </div>
-            </form>
-        </div>
-    )   
+                    <div className={styles.buttonDiv}>
+                        <Button 
+                            variant='contained'
+                            onClick={() => {
+                                console.log('Shape selected: ' + shape + '!')
+                            }}
+                            type='submit'
+                        >
+                            Vote!
+                        </Button>
+                    </div>
+                </form>
+            </div>
+        )
+    } else {
+        return (
+            <div>You have already voted!</div>
+        )
+    }
 }
 
 export default Voting

@@ -168,13 +168,54 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
 * Create the database:
     * ~Connect to Mongodb cloud cluster instance thing~
     * Create all Documents that will be used
-        * Users
+        * ~Users~
+            * Things to track per entry:
+                * _id
+                * team ID
+                * email address
+                * first name
+                * middle initial
+                * last name
+                * date of birth
+                * time zone
+                * favorite color
+                * favorite season
+                * do you like spicy food?
+                * does pineapple belong on pizza?
+                * time created
+                * time updated
+                * accolades: []
+        * Users login
+            * things to track per entry:
+                * _id
+                * user ID
+                * username
+                * hashed password
+                * salt
+                * time created
+                * time updated
         * ~Votes~
-        * Teams
-        * History
+            * Things to track per entry:
+                * _id
+                * User ID
+                * Shape
+                * time created
+                * time updated
+        * ~Teams~
+            * Things to track per entry:
+                * _id
+                * team1: { id: 1, name: x, points: y }
+                * team2: { id: 2, name: x, points: y }
+                * active: true/false
+                * points required for victory
+                * time created
+                * time updated
+        * ~History~
             * Will implement something that auto populates this every four hours
-        * Statistics
+        * ~Statistics~
             * Will implement something that auto populates this every four hours
+        * Accolades
+            * Will implement probably towards the end
     * ... etc?
 
 * Implement login

@@ -1,4 +1,10 @@
-.wider {
-    height: 20%;
-    width: 20%;
+.centered {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    justify-content: center;
+    /* The width of the container also implies margin around the images. */
+    width: 450px;
 }

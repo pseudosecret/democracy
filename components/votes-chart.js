@@ -61,8 +61,9 @@ class VotesChart extends React.Component {
         const data = [this.props.rockVotes, this.props.paperVotes, this.props.scissorsVotes]
 
         return (
-            <div className={styles.wider}>
+            <div className={styles.centered}>
                 <Doughnut 
+                    
                     data={{
                         labels: ["Rock", "Paper", "Scissors"],
                         datasets: [{
@@ -82,10 +83,10 @@ class VotesChart extends React.Component {
                         }],
                         borderWidth: 6,
                     }} 
-                    height={400}
-                    width={400}
+                    height={100}
+                    width={100}
                     options={{  maintainAspectRatio: true,
-                                responsive: false,
+                                responsive: true,
                                 offset: false,
                     }}
                 />

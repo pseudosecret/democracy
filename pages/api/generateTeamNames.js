@@ -23,7 +23,6 @@ const adjs = [
     'Secret',
     'Screaming',
     'Quantum',
-    ''
 ]
 
 const nouns = [
@@ -46,7 +45,7 @@ const nouns = [
     'Goats',
     'Platypi',
     'Devils',
-    'Angels'
+    'Angels',
 ]
 
 export default function handler(req, res) {
@@ -56,12 +55,12 @@ export default function handler(req, res) {
     const y2 = Math.floor(Math.random() * nouns.length)
     let newName1 = ''
     let newName2 = ''
-    if(adjs[x1].length + nouns[y1] > 13) {
+    if(adjs[x1].length + nouns[y1] > 12) {
         newName1 = adjs[x1] + ' ' + nouns[y1]
     } else {
         newName1 = 'The ' + adjs[x1] + ' ' + nouns[y1]
     }
-    if(adjs[x2].length + nouns[y2] > 13) {
+    if(adjs[x2].length + nouns[y2] > 12) {
         newName2 = adjs[x2] + ' ' + nouns[y2]
     } else {
         newName2 = 'The ' + adjs[x2] + ' ' + nouns[y2]
