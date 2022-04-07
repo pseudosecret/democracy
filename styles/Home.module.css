@@ -8,6 +8,35 @@
     width: 100%;
 }
 
-.blah {
-    color: #ffb56b;
+/** bless stackoverflow and all the wisdom it yields: https://stackoverflow.com/questions/22592064/how-to-align-text-below-an-image-in-css **/
+.teamChart {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    /* The width of the container also implies margin around the images. */
+    width: 120px;
 }
+
+.teamChartOneName {
+    display: block;
+    color: #4e1600;
+}
+
+.teamChartTwoName {
+    display: block;
+    color: #2d004d;
+}
+
+.doughnutChart {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    justify-content: center;
+    /* The width of the container also implies margin around the images. */
+    width: 500px;
+}
+

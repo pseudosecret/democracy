@@ -82,11 +82,11 @@ class VotesChart extends React.Component {
                         }],
                         borderWidth: 6,
                     }} 
-                    height={300}
-                    width={300}
+                    height={400}
+                    width={400}
                     options={{  maintainAspectRatio: true,
-                                responsive: true,
-                                offset: true,
+                                responsive: false,
+                                offset: false,
                     }}
                 />
             </div>

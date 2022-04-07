@@ -10,7 +10,7 @@ const TheFooter = () => {
                 <span className={styles.industries}>Wilbur Industries, 2022</span>
             </p>
             <p>
-                <span className={styles.promo}>For more projects by us, check <Link href="https://pseudosecret.github.io/wilburindustries/"><a>here</a></Link>
+                <span className={styles.promo}>For more projects by us, check <Link href="https://www.wilburindustries.com/"><a>here</a></Link>
                 .</span>
             </p>
         </footer>

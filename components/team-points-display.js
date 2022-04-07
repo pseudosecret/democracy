@@ -60,48 +60,41 @@ class TeamPointDisplay extends React.Component {
     render() {
         return (
             <div>
-                <Bar 
-                    data={{
-                        labels: [this.props.teamName],
-                        datasets: [{
-                            barPercentage: 1,
-                            label: "Points",
-                            data: [this.props.teamPoints],
-                            fill: true,
-                            backgroundColor: this.props.backgroundColor,
-                            borderColor: this.props.borderColor
-                        }],
-                        borderWidth: 3,
-                        legend: {
-                            display: true,
-                            labels: {
-                                boxWidth: 50,
-                                fontSize: 10,
-                                fontColor: '#00FF00',
-                                padding: 5,
-                            }
-                        }
-                    }} 
-                    height={400}
-                    width={80}
-                    options={{  maintainAspectRatio: true,
-                                responsive: true,
-                                offset: true,
-                                plugins: {
-                                    legend: {
-                                        display: false
+                <div>
+                    <Bar 
+                        data={{
+                            labels: [''],
+                            datasets: [{
+                                barPercentage: 1,
+                                label: "Points",
+                                data: [this.props.teamPoints],
+                                fill: true,
+                                backgroundColor: this.props.backgroundColor,
+                                borderColor: this.props.borderColor
+                            }],
+                            borderWidth: 3,
+                        }} 
+                        height={400}
+                        width={80}
+                        options={{  maintainAspectRatio: true,
+                                    responsive: true,
+                                    offset: true,
+                                    plugins: {
+                                        legend: {
+                                            display: false
+                                        }
+                                    },
+                                    scales: {
+                                        yAxes: {
+                                                beginAtZero: true,
+                                                min: 0,
+                                                max: 100
+        
+                                        }
                                     }
-                                },
-                                scales: {
-                                    yAxes: {
-                                            beginAtZero: true,
-                                            min: 0,
-                                            max: 100
-    
-                                    }
-                                }
-                    }}
-                />
+                        }}
+                    />
+                </div>
             </div>
         )
 
