@@ -122,25 +122,39 @@ check out all my and my associate's other endeavors at [Wilbur Industries](https
 
 There are a lot of things to do. Lots and lots. I'll be updating this readme as I make headway.
 
-* ~~Create the layout~~:
-    * ~~Header~~
-        * ~~Set up the links~~
-        * ~~Style the links~~
-    * ~~Footer~~
-        * ~~Maybe add a line to separate the footer from the page~~
+* ~Create the layout~:
+    * ~Header~
+        * ~Set up the links~
+        * ~Style the links~
+    * ~Footer~
+        * ~Maybe add a line to separate the footer from the page~
 
 * Create the pages:
     * Home page
-        * ~~Add text that shows voting numbers~~
-        * ~~Add voting selectors for rock, paper, scissors~~
-        * ~~Add voting button~~
+        * ~Add text that shows voting numbers~
+        * ~Add voting selectors for rock, paper, scissors~
+        * ~Add voting button~
         * Voting interface:
-            * Make it so clicking on a shape gives blatantly obvious selection.
-            * Make it so clicking on a shape selects the correct radio button
-            * Make it so clicking vote 
-    * ~~FAQ~~
-        * ~~Write the FAQ~~
-        * Add Q&A about the code
+            * ~Make it so clicking on a shape gives blatantly obvious selection.~
+            * ~Make it so clicking on a shape selects the correct radio button~ 
+            * Create basic API to submit vote data
+            * Implement basic voting, not tied to any specific user
+            * Improve what is submitted as vote data
+            * Test live updates in another browser and implement changes as needed
+                * (Client-side rendering should be happening with votes and team points)
+        * ~Create API that pulls data from vote Document in Mongodb cloud~
+        * ~Hook API up to pull data from Mongodb cloud and display it on the page~
+            * ~Refactor the code until settled on implementation I like >.>~
+        * Teams stuff:
+            * Create API for the teams that randomly generates names
+            * Create Mongodb Document to contain team names
+            * Create Create API that updates team names
+            * Figure out document format with API to make it so there are "active" team names
+                * Or maybe just use most recent? 
+                    * Figure out pros and cons for each approach
+    * ~FAQ~
+        * ~Write the FAQ~
+        * Add Q&A about the code (maybe??)
     * About
         * Write the About page
     * User
@@ -152,7 +166,15 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
             * (Lots of statistical information, TBD later)
 
 * Create the database:
-    * Implement Mongoose
+    * ~Connect to Mongodb cloud cluster instance thing~
+    * Create all Documents that will be used
+        * Users
+        * ~Votes~
+        * Teams
+        * History
+            * Will implement something that auto populates this every four hours
+        * Statistics
+            * Will implement something that auto populates this every four hours
     * ... etc?
 
 * Implement login
