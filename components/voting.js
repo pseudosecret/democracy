@@ -30,9 +30,8 @@ const Voting = () => {
             method: 'POST',
         })
         const result = await res.json();
-        console.log('result: ', JSON.stringify(result))
-        setVoted = true
-        alert('Did you vote for this?: ' + result.shape)
+        console.log('Shape voted for: ' + result.shape)
+        setVoted(true)
     }
 
     if(!voted) {
@@ -119,7 +118,14 @@ const Voting = () => {
         )
     } else {
         return (
-            <div>You have already voted!</div>
+            <div>
+                <p className={styles.alreadyVotedText}>
+                    <span className={styles.italic}>Thank you for voting!</span>
+                </p>
+                <p className={styles.alreadyVotedText}>
+                    <span className={styles.italic}>Come back tomorrow to see if {shape} won!</span> &#128150;
+                </p>
+            </div>
         )
     }
 }

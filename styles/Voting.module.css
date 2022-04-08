@@ -77,3 +77,11 @@
 .buttonDiv {
     margin-top: 20px;
 }
+
+.alreadyVotedText {
+    text-align: center;
+}
+
+.italic {
+    font-style: italic;
+}
