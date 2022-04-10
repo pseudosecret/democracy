@@ -88,7 +88,7 @@ class TeamPointDisplay extends React.Component {
                                         yAxes: {
                                                 beginAtZero: true,
                                                 min: 0,
-                                                max: 100
+                                                max: this.props.maxPoints
         
                                         }
                                     }

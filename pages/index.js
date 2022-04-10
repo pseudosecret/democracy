@@ -10,17 +10,18 @@ import useSWR from 'swr'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 const Index = () => {
-  let { data, error } = useSWR('/api/getVotes', fetcher, { refreshInterval: 1000 })
-  
-  if(error) {
+  let { data: votesData, error: votesError } = useSWR('/api/getVotes', fetcher, { refreshInterval: 3500 })
+  let { data: teamsData, error: teamsError } = useSWR('/api/getTeams', fetcher, { refreshInterval: 10500 })
+
+  if(votesError || teamsError) {
       return (
           <div>
-              Error: {error}
+              Error: {votesError} / {teamsError}
           </div>
       )
   }
 
-  if(!data) {
+  if(typeof(votesData) === 'undefined' || typeof(teamsData) === 'undefined') {
     return (
       <div>
         <Head>
@@ -32,7 +33,7 @@ const Index = () => {
           <div className={styles.charts}>
             <TeamPointDisplay 
               teamName={"Loading..."}
-              teamPoints={62}
+              teamPoints={0}
               backgroundColor={"#FFB56B"}
               borderColor={"#CB410B"}
             />
@@ -43,7 +44,7 @@ const Index = () => {
             />
             <TeamPointDisplay 
               teamName={"Loading..."}
-              teamPoints={36}
+              teamPoints={0}
               backgroundColor={"#7B68EE"}
               borderColor={"#4B0082"}
             />
@@ -76,36 +77,38 @@ const Index = () => {
         <div className={styles.charts}>
           <div className={styles.teamChart}>
             <TeamPointDisplay 
-              teamName={"The Secret Geese"}
-              teamPoints={62}
+              teamName={teamsData.teams.team1.name}
+              teamPoints={teamsData.teams.team1.points}
               backgroundColor={"#FFB56B"}
               borderColor={"#CB410B"}
+              maxPoints={teamsData.teams.pointsToVictory}
             />
-            <span className={styles.teamChartOneName}>The Secret Geese</span>
+            <span className={styles.teamChartOneName}>{teamsData.teams.team1.name}</span>
           </div>
           <div className={styles.doughnutChart}>
           <VotesChart 
-            rockVotes={data.votes.rock}
-            paperVotes={data.votes.paper}
-            scissorsVotes={data.votes.scissors}
+            rockVotes={votesData.votes.rock}
+            paperVotes={votesData.votes.paper}
+            scissorsVotes={votesData.votes.scissors}
           />
           </div>
           <div className={styles.teamChart}>
             <div className={styles.teamChartWidth}></div>
             <TeamPointDisplay 
-              teamName={"The Sinister Scientists"}
-              teamPoints={36}
+              teamName={teamsData.teams.team2.name}
+              teamPoints={teamsData.teams.team2.points}
               backgroundColor={"#7B68EE"}
               borderColor={"#4B0082"}
+              maxPoints={teamsData.teams.pointsToVictory}
             />
-            <span className={styles.teamChartTwoName}>The Secret Geese</span>
+            <span className={styles.teamChartTwoName}>{teamsData.teams.team2.name}</span>
           </div>
           </div>
           <div>
             <VotesInfo 
-              rockVotes = {data.votes.rock}
-              paperVotes = {data.votes.paper}
-              scissorsVotes = {data.votes.scissors}
+              rockVotes = {votesData.votes.rock}
+              paperVotes = {votesData.votes.paper}
+              scissorsVotes = {votesData.votes.scissors}
             />
           </div>
         </div>
