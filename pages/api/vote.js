@@ -1,4 +1,3 @@
-import { isAssetError } from 'next/dist/client/route-loader'
 import { connectToDatabase } from '../../util/dbConnect'
 
 const vote = async (req, res) => {

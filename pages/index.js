@@ -10,7 +10,7 @@ import useSWR from 'swr'
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
 const Index = () => {
-  let { data, error } = useSWR('/api/getVotes', fetcher)
+  let { data, error } = useSWR('/api/getVotes', fetcher, { refreshInterval: 1000 })
   
   if(error) {
       return (

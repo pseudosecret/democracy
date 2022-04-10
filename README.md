@@ -137,21 +137,24 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
         * Voting interface:
             * ~Make it so clicking on a shape gives blatantly obvious selection.~
             * ~Make it so clicking on a shape selects the correct radio button~ 
-            * Create basic API to submit vote data
-            * Implement basic voting, not tied to any specific user
+            * ~Create basic API to submit vote data~
+            * ~Implement basic voting, not tied to any specific user~
             * Improve what is submitted as vote data
             * Test live updates in another browser and implement changes as needed
                 * (Client-side rendering should be happening with votes and team points)
+            * Set so when shape not selected, button is disabled; cannot vote without shape selected
         * ~Create API that pulls data from vote Document in Mongodb cloud~
         * ~Hook API up to pull data from Mongodb cloud and display it on the page~
             * ~Refactor the code until settled on implementation I like >.>~
         * Teams stuff:
-            * Create API for the teams that randomly generates names
+            * ~Create API for the teams that randomly generates names~
             * Create Mongodb Document to contain team names
             * Create Create API that updates team names
             * Figure out document format with API to make it so there are "active" team names
                 * Or maybe just use most recent? 
                     * Figure out pros and cons for each approach
+        * ~Implement real-time-ish solution for voting~
+            * (note: was fairly straight forward; refreshInterval option for useSWR)
     * ~FAQ~
         * ~Write the FAQ~
         * Add Q&A about the code (maybe??)

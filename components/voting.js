@@ -9,17 +9,19 @@ import scissors from '../public/img/scissors.png'
 const Voting = () => {
     const [shape, setShape] = React.useState('')
     const [voted, setVoted] = React.useState(false)
+    const [disabled, setDisabled] = React.useState(true)
 
     const handleChange = (event) => {
         setShape(event.target.value)
+        setDisabled(false)
     }
 
     const handleClick = (event) => {
         setShape(event.target.id)
+        setDisabled(false)
     }
 
     const submitVote = async (event) => {
-        event.preventDefault()
         const res = await fetch('/api/vote', {
             body: JSON.stringify({
                 shape: shape
@@ -105,12 +107,13 @@ const Voting = () => {
                     <div className={styles.buttonDiv}>
                         <Button 
                             variant='contained'
+                            disabled={disabled}
                             onClick={() => {
                                 console.log('Shape selected: ' + shape + '!')
                             }}
                             type='submit'
                         >
-                            Vote!
+                            {shape === '' ? "Pick one..." : "Vote!"}
                         </Button>
                     </div>
                 </form>
