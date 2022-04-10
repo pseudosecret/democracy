@@ -187,9 +187,35 @@ export default function FAQ() {
                 </div>
                 <div className={styles.answer}>
                     <p>
-                        No, not really. I chose the colors because I thought they matched 
-                        the personality of the shape. As far as teams, I picked complementary 
-                        colors from colors not really used for the shapes.
+                        Not... entirely. For the shapes, I chose the colors because I thought 
+                        their personalities matched. To go into a little more detail:
+                    </p>
+                    <ul>
+                        <li>
+                            Rock is a hard material object in the world&#8212;a low thud, a rumble, 
+                            a heavy impact. Rock is the bass register in music. A low frequency. In 
+                            that way, a low frequency in color seems the most natural pairing.
+                        </li>
+                        <li>
+                            Paper is soft, erudite, and gentle (except for paper cuts&#8212;but those 
+                            still aren't as dangerous as falling rocks). In some ways, it is all the 
+                            things that rock is not. So, a higher frequency makes sense, which is 
+                            why I went with blue (I reserved purple for one of the teams).
+                        </li>
+                        <li>
+                            Scissors is more of a happy accident. Green is the middle of the spectrum, 
+                            the easiest on the eyes, and that makes it the most "hidden" of the colors. 
+                            Scissors is sneaky, cunning, and unexpected. Therefore: green fits kind of. 
+                        </li>
+                        <li>
+                            But also!&#8212;green rounds the shape colors out, giving me Red, Green, and 
+                            Blue, which get used in computer color stuffs to make all the rest of the 
+                            colors, and that's pretty cool. &#128522;
+                        </li>
+                    </ul>
+                    <p>
+                        As for the teams, I simply chose complementary colors from what was leftover, 
+                        which is how I ended up with some kind of yellowish and purpleish colors.
                     </p>
                 </div>
 
