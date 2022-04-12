@@ -1,6 +1,6 @@
 import '../styles/globals.css'
-import TheHeader from '../components/the-header'
-import TheFooter from '../components/the-footer'
+import TheHeader from '../components/TheHeader'
+import TheFooter from '../components/TheFooter'
 
 function MyApp({ Component, pageProps }) {
   return (

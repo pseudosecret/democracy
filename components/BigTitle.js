@@ -1,4 +1,4 @@
-import styles from '../styles/Big-Title.module.css'
+import styles from '../styles/BigTitle.module.css'
 
 const BigTitle = () => {
     return (

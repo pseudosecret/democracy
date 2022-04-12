@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/Votes-Info.module.css'
+import styles from '../styles/VotesInfo.module.css'
 
 class VotesInfo extends React.Component {
     render() {

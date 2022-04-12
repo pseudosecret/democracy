@@ -134,34 +134,47 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
         * ~Add text that shows voting numbers~
         * ~Add voting selectors for rock, paper, scissors~
         * ~Add voting button~
+        * Create hook that changes Login to Profile and vice verse in navbar
         * Voting interface:
             * ~Make it so clicking on a shape gives blatantly obvious selection.~
             * ~Make it so clicking on a shape selects the correct radio button~ 
             * ~Create basic API to submit vote data~
             * ~Implement basic voting, not tied to any specific user~
+            * ~Test live updates in another browser and implement changes as needed~
+                * ~(Client-side rendering should be happening with votes and team points)~
+            * ~Set so when shape not selected, button is disabled; cannot vote without shape selected~
             * Improve what is submitted as vote data
-            * Test live updates in another browser and implement changes as needed
-                * (Client-side rendering should be happening with votes and team points)
-            * Set so when shape not selected, button is disabled; cannot vote without shape selected
+            * Implement responsive pages to handle different screen sizes
         * ~Create API that pulls data from vote Document in Mongodb cloud~
         * ~Hook API up to pull data from Mongodb cloud and display it on the page~
             * ~Refactor the code until settled on implementation I like >.>~
         * Teams stuff:
             * ~Create API for the teams that randomly generates names~
-            * Create Mongodb Document to contain team names
-            * Create Create API that updates team names
-            * Figure out document format with API to make it so there are "active" team names
-                * Or maybe just use most recent? 
-                    * Figure out pros and cons for each approach
+            * ~Create Mongodb Document to contain team names~
+            * ~Create API that updates team names~
+            * ~Figure out document format with API to make it so there are "active" team names~
+            * Assign points required for victory to 7 * 3 * usersActiveWithinLast10Days (i.e. they've voted)
+                * Reasoning: 
+                    * Assuming 100 active users
+                    * 50 per team
+                    * 80% playing throughout the day
+                    * Average points per day is equal to 2.667 (rounds to 3)
+                    * 7 days of straight average win/loss/neutral of everyone on the team voting to hit cap
+                    * However, players will reduce enemy team's points as well as increase their own
+                    * Points required for victory diminish at -3 points per day
         * ~Implement real-time-ish solution for voting~
             * (note: was fairly straight forward; refreshInterval option for useSWR)
     * ~FAQ~
         * ~Write the FAQ~
         * Add Q&A about the code (maybe??)
     * About
-        * Write the About page
+        * ~Write the About page~
     * User
         * (lots of subpages, TBD later)
+        * Create login page
+        * Create profile page
+        * Create personal history page
+        * Create 
     * Data
         * History page
             * (Lots of numerical records, TBD later)

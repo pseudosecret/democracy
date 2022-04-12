@@ -1,10 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import TeamPointDisplay from '../components/team-points-display'
-import VotesChart from '../components/votes-chart'
-import VotesInfo from '../components/votes-info'
-import Voting from '../components/voting'
+import TeamPointDisplay from '../components/TeamPointsDisplay'
+import VotesChart from '../components/VotesChart'
+import VotesInfo from '../components/VotesInfo'
+import Voting from '../components/Voting'
 import useSWR from 'swr'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())

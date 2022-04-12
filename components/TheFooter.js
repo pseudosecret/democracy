@@ -1,4 +1,4 @@
-import styles from '../styles/The-Footer.module.css'
+import styles from '../styles/TheFooter.module.css'
 import Link from 'next/link'
 
 const TheFooter = () => {

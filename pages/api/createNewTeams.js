@@ -24,7 +24,7 @@ const createNewTeams = async (req, res) => {
                 points: 0
             },
             active: true,
-            pointsToVictory: 500,
+            pointsToVictory: 500, // this will later be 7 * 3 * number of players active within the last ten days
             timeCreated: new Date().toISOString(),
             timeUpdated: new Date().toISOString()
         }

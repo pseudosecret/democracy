@@ -1,5 +1,6 @@
-import styles from '../styles/Team-Points-Display.module.css'
+import styles from '../styles/TeamPointsDisplay.module.css'
 import React from 'react';
+
 import {
   Chart as ChartJS,
   ArcElement,

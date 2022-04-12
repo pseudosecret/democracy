@@ -1,4 +1,4 @@
-import styles from '../styles/Votes-Chart.module.css'
+import styles from '../styles/VotesChart.module.css'
 import React from 'react';
 import {
   Chart as ChartJS,

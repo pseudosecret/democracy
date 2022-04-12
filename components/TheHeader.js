@@ -1,6 +1,6 @@
-import BigTitle from './big-title'
-import NavBar from './navbar'
-import styles from '../styles/The-Header.module.css'
+import BigTitle from './BigTitle'
+import NavBar from './Navbar'
+import styles from '../styles/TheHeader.module.css'
 
 const TheHeader = () => {
     return (
