@@ -50,12 +50,12 @@ const AccountCreationForm = () => {
                 noValidate
                 autoComplete="off"
             >
-                <InputLabel id="demo-simple-select-label">Favorite Color</InputLabel>
+                <InputLabel id="favoriteColorLabel">Favorite Color</InputLabel>
                 <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    label="Age"
+                    labelId="favorite-color-label"
+                    id="favoriteColor"
+                    value=""
+                    label="Favorite Color"
                     autowidth
                 >
                     <MenuItem value="black"     >Black</MenuItem>
