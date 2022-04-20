@@ -171,10 +171,10 @@ There are a lot of things to do. Lots and lots. I'll be updating this readme as 
         * ~Write the About page~
     * User
         * (lots of subpages, TBD later)
-        * Create login page
+        * Create user page
+        * Login page
         * Create profile page
         * Create personal history page
-        * Create 
     * Data
         * History page
             * (Lots of numerical records, TBD later)
