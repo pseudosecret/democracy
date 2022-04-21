@@ -3,3 +3,16 @@
     margin: auto;
     text-align: center;
 }
+
+.disclaimer {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
