@@ -1,29 +1,31 @@
 import React from 'react'
-import Box from '@mui/material/Box';
-import FilledInput from '@mui/material/FilledInput';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
-import Input from '@mui/material/Input';
-import TextField from '@mui/material/TextField';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
-import InputLabel from '@mui/material/InputLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box'
+import FilledInput from '@mui/material/FilledInput'
+import FormControl from '@mui/material/FormControl'
+import FormHelperText from '@mui/material/FormHelperText'
+import Input from '@mui/material/Input'
+import TextField from '@mui/material/TextField'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker'
+import InputLabel from '@mui/material/InputLabel'
+import OutlinedInput from '@mui/material/OutlinedInput'
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
 import styles from '../../styles/AccountCreationForm.module.css'
+import TimezoneSelect from 'react-timezone-select'
 
 const AccountCreationForm = () => {
     const [date, setDate] = React.useState(new Date())
+    const [selectedTimezone, setSelectedTimezone] = React.useState({})
     const [color, setColor] = React.useState('')
     const [season, setSeason] = React.useState('')
     const [spicy, setSpicy] = React.useState('')
     const [pineapple, setPineapple] = React.useState('')
 
     const handleDateChange = (newValue) => {
-        setDate(newValue);
+        setDate(newValue)
     }
 
     const handleColorChoiceChange = (event) => {
@@ -130,8 +132,13 @@ const AccountCreationForm = () => {
                     marginBottom: 5,
                 }}
             >
-
-                <h3>TimeZone</h3>
+                <div>
+                    <h3>TimeZone</h3>
+                    <TimezoneSelect
+                        value={selectedTimezone}
+                        onChange={setSelectedTimezone}
+                    />
+                </div>
             </Box>
             <Box
                 component="form" 
