@@ -1,9 +1,6 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import Box from '@mui/material/Box'
-import FilledInput from '@mui/material/FilledInput'
 import FormControl from '@mui/material/FormControl'
-import FormHelperText from '@mui/material/FormHelperText'
-import Input from '@mui/material/Input'
 import TextField from '@mui/material/TextField'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
@@ -14,15 +11,21 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import styles from '../../styles/AccountCreationForm.module.css'
-import TimezoneSelect from 'react-timezone-select'
+import timezones from './TimeZone.json'
+
 
 const AccountCreationForm = () => {
+    let timeZoneArray = []
+    Object.keys(timezones).forEach((tz, index) => {
+        timeZoneArray.push(timezones[index])
+    })
+
     const [date, setDate] = React.useState(new Date())
-    const [selectedTimezone, setSelectedTimezone] = React.useState({})
     const [color, setColor] = React.useState('')
     const [season, setSeason] = React.useState('')
     const [spicy, setSpicy] = React.useState('')
     const [pineapple, setPineapple] = React.useState('')
+    const [timeZone, setTimeZone] = React.useState('')
 
     const handleDateChange = (newValue) => {
         setDate(newValue)
@@ -33,7 +36,6 @@ const AccountCreationForm = () => {
     }
 
     const handleSeasonChoiceChange = (event) => {
-        setSeason(event.target.value)
     }
 
     const handleSpicyChoiceChange = (event) => {
@@ -42,6 +44,10 @@ const AccountCreationForm = () => {
 
     const handlePineappleChoiceChange = (event) => {
         setPineapple(event.target.value)
+    }
+
+    const handleTimeZoneChoiceChange = (event) => {
+        setTimeZone(event.target.value)
     }
 
     return (
@@ -132,13 +138,21 @@ const AccountCreationForm = () => {
                     marginBottom: 5,
                 }}
             >
-                <div>
-                    <h3>TimeZone</h3>
-                    <TimezoneSelect
-                        value={selectedTimezone}
-                        onChange={setSelectedTimezone}
-                    />
-                </div>
+                <h3>TimeZone</h3>
+                <FormControl sx={{ minWidth: 500 }}>
+                    <InputLabel id="timezoneLabel">Your TimeZone</InputLabel>
+                    <Select
+                        labelId="timezoneLabel"
+                        id="timezone"
+                        label="Your Timezone"
+                        value={timeZone}
+                        onChange={handleTimeZoneChoiceChange}
+                    >
+                        {timeZoneArray.map(tz => {
+                            return <MenuItem value={tz["abbr"]}>{tz["text"]}</MenuItem>
+                        })}
+                    </Select>
+                </FormControl>
             </Box>
             <Box
                 component="form" 
@@ -156,7 +170,7 @@ const AccountCreationForm = () => {
                         label="Favorite Color"
                         onChange={handleColorChoiceChange}
                     >
-                        <MenuItem value="black"     >Black</MenuItem>
+                        <MenuItem value="black"     ></MenuItem>
                         <MenuItem value="blue"      >Blue</MenuItem>
                         <MenuItem value="brown"     >Brown</MenuItem>
                         <MenuItem value="fuchsia"   >Fuchsia</MenuItem>
@@ -210,12 +224,12 @@ const AccountCreationForm = () => {
                     </Select>
                 </FormControl>
                 <FormControl sx={{ minWidth: 270 }}>
-                    <InputLabel id="pineappleLabel">Pineapple's Presence?</InputLabel>
+                    <InputLabel id="pineappleLabel">Pineapple on Pizza?</InputLabel>
                     <Select
                         labelId="pineappleLabel"
                         id="pineapple"
                         value={pineapple}
-                        label="Pineapple's Presence"
+                        label="Pineapple on Pizza"
                         onChange={handlePineappleChoiceChange}
                     >
                         <MenuItem value="yes"   >Yes!</MenuItem>
